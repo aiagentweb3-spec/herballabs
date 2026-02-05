@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="hr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Preorder / Early Access — HerbalLabs</title>
+  <meta name="description" content="Prijavi se za HerbalLabs preorder i GrowMind beta. Izaberi što te zanima i javljamo se prvi." />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <div class="nav">
+      <a class="brand" href="index.html">
+        <div class="logo" aria-hidden="true"></div>
+        <span>Herbal<em>Labs</em></span>
+      </a>
+
+      <nav class="menu" aria-label="Glavna navigacija">
+        <a data-nav href="ecosystem.html">Ecosystem</a>
+        <a data-nav href="growmind.html">GrowMind</a>
+        <a data-nav href="grow-systems.html">Grow Systems</a>
+        <a data-nav href="buy.html">Buy</a>
+        <a data-nav href="preorder.html" class="active">Preorder</a>
+        <a data-nav href="contact.html">Contact</a>
+      </nav>
+
+      <div class="actions">
+        <a class="btn small ghost" href="about.html">About</a>
+        <a class="btn small primary" href="https://wa.me/385957982203" target="_blank">WhatsApp</a>
+      </div>
+
+      <div class="hamburger">
+        <button data-menu-btn aria-label="Otvori izbornik">☰</button>
+      </div>
+    </div>
+
+    <div class="mobile-drawer" data-mobile-drawer>
+      <a data-nav href="index.html">Home</a>
+      <a data-nav href="ecosystem.html">Ecosystem</a>
+      <a data-nav href="growmind.html">GrowMind</a>
+      <a data-nav href="grow-systems.html">Grow Systems</a>
+      <a data-nav href="buy.html">Buy</a>
+      <a data-nav href="preorder.html">Preorder</a>
+      <a data-nav href="contact.html">Contact</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container">
+      <div class="grid-hero">
+        <div class="card">
+          <div class="kicker">
+            <span class="badge"><span class="dot"></span> Early access</span>
+            <span class="badge">Preorder list</span>
+            <span class="badge">GrowMind™ beta</span>
+          </div>
+
+          <h1>Join the preorder list</h1>
+          <p>
+            Prijavi se i reci što te zanima. Mi ti prvi javimo kad krenu prvi batch-evi i beta test.
+            Ovdje skupljamo stvarni interes, bez spama.
+          </p>
+
+          <div class="sep"></div>
+
+          <form class="form" id="preForm">
+            <input class="input" id="name" placeholder="Ime" required />
+            <input class="input" id="email" placeholder="Email" type="email" required />
+
+            <select class="input" id="interest" required>
+              <option value="" disabled selected>Što te zanima?</option>
+              <option value="Core Grow Box (Starter Bundle)">Core Grow Box (Starter Bundle)</option>
+              <option value="Hydro Module">Hydro Module</option>
+              <option value="Vertical System / B2B">Vertical System / B2B</option>
+              <option value="GrowMind (Lab View / Pro)">GrowMind (Lab View / Pro)</option>
+            </select>
+
+            <textarea class="input" id="msg" placeholder="Poruka (opcionalno) — npr. prostor, cilj, količine..."></textarea>
+
+            <div class="linkrow">
+              <button class="btn primary" type="submit">Generate message</button>
+              <a class="btn" id="sendEmail" href="#" target="_blank">Send via Email</a>
+              <a class="btn" id="sendWA" href="#" target="_blank">Send via WhatsApp</a>
+            </div>
+
+            <p class="small" style="margin-top:10px;">
+              Klikni “Generate message”, pa odaberi Email ili WhatsApp.
+            </p>
+          </form>
+        </div>
+
+        <aside class="card heroMedia">
+          <div class="media ratio-4x3">
+            <img src="assets/img/hero.png" alt="HerbalLabs Grow Systems" />
+          </div>
+          <div class="caption">
+            <strong>What happens next?</strong><br/>
+            Mi odgovaramo s info o batchu, cijeni i dostupnosti + opcija za pilot (B2B).
+          </div>
+
+          <div class="sep"></div>
+
+          <div class="list">
+            <div class="item">✔️ First access</div>
+            <div class="item">✔️ Beta testing (GrowMind)</div>
+            <div class="item">✔️ Partner deals (B2B)</div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <p class="small">
+      © <span id="y"></span> HerbalLabs ·
+      <a href="mailto:info@herballabs.io">info@herballabs.io</a> ·
+      <a href="https://wa.me/385957982203" target="_blank">WhatsApp</a> ·
+      <a href="https://t.me/herballabs" target="_blank">Telegram</a>
+    </p>
+  </div>
+</footer>
+
+<a href="https://wa.me/385957982203" target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">💬 <span>WhatsApp</span></a>
+
+<script>
+  document.getElementById('y').textContent = new Date().getFullYear();
+
+  const form = document.getElementById('preForm');
+  const sendEmail = document.getElementById('sendEmail');
+  const sendWA = document.getElementById('sendWA');
+
+  function enc(s){ return encodeURIComponent(s || ""); }
+
+  function buildMessage(){
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const interest = document.getElementById('interest').value;
+    const msg = document.getElementById('msg').value.trim();
+
+    const lines = [
+      "HerbalLabs Preorder / Early Access",
+      "---------------------------------",
+      `Ime: ${name}`,
+      `Email: ${email}`,
+      `Interes: ${interest}`,
+      msg ? `Poruka: ${msg}` : "",
+      "",
+      "Poslano s HerbalLabs weba."
+    ].filter(Boolean);
+
+    return lines.join("\n");
+  }
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const text = buildMessage();
+
+    const subject = "HerbalLabs — Preorder / Early Access";
+    sendEmail.href = `mailto:info@herballabs.io?subject=${enc(subject)}&body=${enc(text)}`;
+    sendWA.href = `https://wa.me/385957982203?text=${enc(text)}`;
+
+    alert("Poruka je spremna ✅ Odaberi Email ili WhatsApp.");
+  });
+</script>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="hr">
+<head>
+  <meta name="theme-color" content="#0b0f0c" />
+  <link rel="icon" type="image/png" href="assets/img/logo.png" />
+  <meta property="og:title" content="HerbalLabs — Grow Systems powered by GrowMind™" />
+  <meta property="og:description" content="Modularni indoor uzgoj: Core, Hydro, Vertical. Preorder otvoren." />
+  <meta property="og:image" content="assets/img/hero.png" />
+  <meta property="og:type" content="website" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact — HerbalLabs</title>
+  <meta name="description" content="Kontakt, partnerstva i early access lista." />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+<header>
+  <div class="container">
+    <div class="nav">
+      <a class="brand" href="index.html"><div class="logo"></div><span>Herbal<em>Labs</em></span></a>
+      <nav class="menu">
+        <a data-nav href="ecosystem.html">Ecosystem</a>
+        <a data-nav href="growmind.html">GrowMind</a>
+        <a data-nav href="grow-systems.html">Grow Systems</a>
+        <a data-nav href="botanicals.html">Botanicals</a>
+        <a data-nav href="charlie-and-bonnie.html">Charlie&Bonnie</a>
+        <a data-nav href="learn.html">Learn</a>
+        <a data-nav href="contact.html">Contact</a>
+      </nav>
+      <div class="actions">
+        <a class="btn small ghost" href="about.html">About</a>
+        <a class="btn small primary" href="#early">Early access</a>
+      </div>
+      <div class="hamburger"><button data-menu-btn>☰</button></div>
+    </div>
+    <div class="mobile-drawer" data-mobile-drawer>
+      <a data-nav href="ecosystem.html">Ecosystem</a>
+      <a data-nav href="growmind.html">GrowMind</a>
+      <a data-nav href="grow-systems.html">Grow Systems</a>
+      <a data-nav href="botanicals.html">Botanicals</a>
+      <a data-nav href="vertical-farming.html">Vertical Farming</a>
+      <a data-nav href="charlie-and-bonnie.html">Charlie&Bonnie</a>
+      <a data-nav href="learn.html">Learn</a>
+      <a data-nav href="about.html">About</a>
+      <a data-nav href="contact.html">Contact</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container">
+      <div class="card">
+        <div class="kicker">
+          <span class="badge"><span class="dot"></span> Contact</span>
+          <span class="badge">Early access</span>
+          <span class="badge">Partnerships</span>
+        </div>
+        <h1>Let’s build it.</h1>
+        <p>Javi se za beta listu, partnerstva (B2B) ili distribuciju Charlie & Bonnie.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="early">
+    <div class="container">
+      <div class="split">
+        <div class="card tile">
+          <h2>Early access</h2>
+          <p class="small">Ovo je demo forma (bez backend-a). Kasnije spojimo na Mailchimp/ConvertKit ili vlastiti API.</p>
+          <form class="form" onsubmit="event.preventDefault(); alert('Upisano! (demo)');">
+            <input class="input" placeholder="Ime" required />
+            <input class="input" placeholder="Email" type="email" required />
+            <button class="btn primary" type="submit">Join</button>
+          </form>
+        </div>
+
+        <div class="card tile" id="partners">
+          <h2>Partnerships</h2>
+          <p class="small">B2B vertical pilot / retail / R&D.</p>
+          <form class="form" onsubmit="event.preventDefault(); alert('Poslano! (demo)');">
+            <input class="input" placeholder="Tvrtka / Ime" required />
+            <input class="input" placeholder="Email" type="email" required />
+            <textarea class="input" placeholder="Poruka (što želiš graditi?)" required></textarea>
+            <button class="btn" type="submit">Send</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="sep"></div>
+
+      <div class="note">
+        <strong>Next step</strong>
+        <p class="small">Kad potvrdiš domenu i hosting, ubacimo pravi newsletter + analytics + SEO meta.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer><div class="container"><p class="small">© <span id="y"></span> HerbalLabs</p></div></footer>
+<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+<script src="assets/js/main.js"></script>
+  <a href="https://wa.me/385957982203" target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">💬 <span>WhatsApp</span></a>
+
+  <div class="cta-bar">
+    <div class="text"><strong>HerbalLabs</strong> · Preorder list je otvorena. Želiš info/bundle?</div>
+    <div class="btns">
+      <a class="btn primary" href="preorder.html">Join preorder</a>
+      <a class="btn" target="_blank" href="https://wa.me/385957982203?text=HerbalLabs%20-%20zanima%20me%20preorder%20i%20bundle%20opcije.">WhatsApp</a>
+      <a class="btn ghost" href="grow-systems.html">Catalog</a>
+    </div>
+  </div>
+
+  <a href="https://t.me/herballabs" target="_blank" class="telegram-float" aria-label="Join Telegram">✈️ <span>Telegram</span></a>
+</body>
+</html>
